@@ -9,14 +9,10 @@ main_window = Tk()
 main_window.title("NPW (Non-Portable Walkman)")
 main_window.minsize(800, 600)
 
-
-
 def play_song(song):
     pygame.mixer.init()
     pygame.mixer.music.load(song)
-    print(song)
     pygame.mixer.music.play(0)
-
     song_n = os.path.split(song)
     main_window.title(song_n[1])
 def play():
@@ -25,7 +21,6 @@ def pause():
     pygame.mixer.music.pause()
 def select_song():
     file_selected = filedialog.askopenfilename(initialdir="./songs")
-    print(file_selected)
     play_song(file_selected)
 
 select_song_btn = Button(main_window, text = "Select song...", command = select_song, relief = "solid", borderwidth = "1px")
