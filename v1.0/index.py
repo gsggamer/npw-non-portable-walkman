@@ -7,6 +7,8 @@ root_fd = os.path.dirname(__file__)
 songs_fd = os.path.join(root_fd, "songs")
 main_window = Tk()
 main_window.title("NPW (Non-Portable Walkman)")
+icon = PhotoImage(file = "./icon.png")
+main_window.iconphoto(False, icon)
 main_window.minsize(800, 600)
 
 def play_song(song):
