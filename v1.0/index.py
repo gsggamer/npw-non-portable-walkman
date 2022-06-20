@@ -7,7 +7,7 @@ root_fd = os.path.dirname(__file__)
 songs_fd = os.path.join(root_fd, "songs")
 main_window = Tk()
 main_window.title("NPW (Non-Portable Walkman)")
-icon = PhotoImage(file = "./icon.png")
+icon = PhotoImage(file = "v1.0/icon.png/")
 main_window.iconphoto(False, icon)
 main_window.minsize(800, 600)
 
@@ -22,7 +22,7 @@ def play():
 def pause():
     pygame.mixer.music.pause()
 def select_song():
-    file_selected = filedialog.askopenfilename(initialdir="./songs")
+    file_selected = filedialog.askopenfilename(initialdir=songs_fd)
     play_song(file_selected)
 
 select_song_btn = Button(main_window, text = "Select song...", command = select_song, relief = "solid", borderwidth = "1px")
