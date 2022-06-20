@@ -9,7 +9,7 @@ root_fd = os.path.dirname(__file__)
 songs_fd = os.path.join(root_fd, "songs")
 main_window = Tk()
 main_window.title("NPW (Non-Portable Walkman)")
-icon = PhotoImage(file="v1.0/icon.png/")
+icon = PhotoImage(file="v1.0/img/icon.png")
 main_window.iconphoto(False, icon)
 main_window.minsize(800, 600)
 
@@ -35,17 +35,20 @@ def select_song():
     play_song(file_selected)
 
 
+play_icon = PhotoImage(file="v1.0/img/play.png")
+pause_icon = PhotoImage(file="v1.0/img/pause.png")
 select_song_btn = Button(main_window, text="Select song...",
                          command=select_song, relief="solid", borderwidth="1px")
-play_song_btn = Button(main_window, text="Play", command=play,
-                       relief="solid", borderwidth="1px", background="#9f9")
-pause_song_btn = Button(main_window, text="Pause", command=pause,
-                        relief="solid", borderwidth="1px", background="#f99")
+
+play_song_btn = Button(main_window, image=play_icon, command=play,
+                       borderwidth=0)
+pause_song_btn = Button(main_window, image=pause_icon, command=pause,
+                        borderwidth=0)
 
 select_song_btn.pack()
 select_song_btn.place(x=-1, y=-1)
 play_song_btn.pack()
-play_song_btn.place(x=410, y=200)
+play_song_btn.place(x=420, y=200)
 pause_song_btn.pack()
-pause_song_btn.place(x=340, y=200)
+pause_song_btn.place(x=330, y=200)
 main_window.mainloop()
