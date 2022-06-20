@@ -12,6 +12,7 @@ main_window.title("NPW (Non-Portable Walkman)")
 icon = PhotoImage(file="v1.0/img/icon.png")
 main_window.iconphoto(False, icon)
 main_window.minsize(800, 600)
+main_window.maxsize(800, 600)
 
 
 def play_song(song):
@@ -47,8 +48,8 @@ pause_song_btn = Button(main_window, image=pause_icon, command=pause,
 
 select_song_btn.pack()
 select_song_btn.place(x=-1, y=-1)
-play_song_btn.pack()
-play_song_btn.place(x=420, y=200)
 pause_song_btn.pack()
-pause_song_btn.place(x=330, y=200)
+pause_song_btn.place(x=330, y=400)
+play_song_btn.pack()
+play_song_btn.place(x=420, y=400)
 main_window.mainloop()
